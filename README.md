@@ -3,13 +3,16 @@ ct8创建socks5的一键脚本
 
 运行前提：你必须先要登录CT8的面板，去允许自定义程序和开启一个TCP端口。
 
-用法：1：ssh登录你的ct8服务器，输入nano ct8socks.sh，然后把ct8socks.sh里面所有的内容黏贴进去，保存退出。或者用winscp等任何支持sshftp的软件直接把ct8socks.sh传上去。
+用法：
+1：ssh登录你的ct8服务器，输入nano ct8socks.sh，然后把ct8socks.sh里面所有的内容黏贴进去，保存退出。或者用winscp等任何支持sshftp的软件直接把ct8socks.sh传上去。
+
+或者直接curl -O https://github.com/Neomanbeta/ct8socks/raw/main/ct8socks.sh && chmod +x ct8socks.sh && ./ct8socks.sh
 
 2：给脚本赋予运行权限chmod +x ct8socks.sh
 
 3：运行脚本./ct8socks.sh
 
-4：根据脚本的提示信息进行操作，中途可能需要你停止脚本重连ssh（为了让pm2生效）
+4：根据脚本的提示信息进行操作，中途可能需要你停止脚本重连ssh（为了让pm2生效），这里没有条件过多测试，反正提示你成功安装pm2了，接下来出错不能继续了，你就断开ssh再重新连接，按照2的方式再重新运行脚本。
 
 5：里面需要你输入的只有3个地方，socks5的端口，socks5的用户名，socks5的密码，然后等待安装完成。
 
