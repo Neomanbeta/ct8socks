@@ -4,11 +4,17 @@ ct8创建socks5的一键脚本
 运行前提：你必须先要登录CT8的面板，去允许自定义程序和开启一个TCP端口。
 
 用法：1：ssh登录你的ct8服务器，输入nano ct8socks.sh，然后把ct8socks.sh里面所有的内容黏贴进去，保存退出。或者用winscp等任何支持sshftp的软件直接把ct8socks.sh传上去。
+
 2：给脚本赋予运行权限chmod +x ct8socks.sh
+
 3：运行脚本./ct8socks.sh
+
 4：根据脚本的提示信息进行操作，中途可能需要你停止脚本重连ssh（为了让pm2生效）
+
 5：里面需要你输入的只有3个地方，socks5的端口，socks5的用户名，socks5的密码，然后等待安装完成。
+
 6：进行保活，下载仓库中的checksocks5.sh放到/domains/用户名小写.ct8.pl/socks5/目录下，或者自己手动进入到这个目录nano checksocks5.sh，把checksocks5.sh里面的所有内容黏贴进去保存并退出，这个脚本必须和socks5.js同目录，否则会判断失败。
+
 7：赋予checksocks5.sh运行权限chmod +x checksocks5.sh
 
 说明：
