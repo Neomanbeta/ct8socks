@@ -25,7 +25,7 @@ ct8创建socks5的一键脚本
 
 在成功运行并启动socks5代理以后，脚本最后会提示“代理工作正常，脚本结束”，然后你需要用crontab来给代理保活
 
-ssh连接后输入crontab -e，然后把这段里面的两处中文改成对应的你自己的信息
+ssh连接后输入crontab -e，然后把这段里面的两处中文改成对应的你自己的信息，再黏贴进去
 
 * * * * * /home/用户名/domains/用户名小写.ct8.pl/socks5/checksocks5.sh > /dev/null 2>&1
 
