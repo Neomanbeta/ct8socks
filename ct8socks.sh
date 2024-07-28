@@ -121,21 +121,21 @@ done
 sed -i '' "s/'user': 'password'/'$SOCKS5_USER': '$SOCKS5_PASS'/" socks5.js
 
 # 检查并删除已存在的同名pm2进程
-if pm2 list | grep -q socks_proxy; then
-  pm2 stop socks_proxy
-  pm2 delete socks_proxy
+if pm2 list | grep -q socks5_proxy; then
+  pm2 stop socks5_proxy
+  pm2 delete socks5_proxy
 fi
 
 # 启动socks5.js代理
 echo "正在启动socks5代理..."
-pm2 start socks5.js --name socks_proxy
+pm2 start socks5.js --name socks5_proxy
 
 # 延迟检测以确保代理启动
 echo "等待代理启动..."
 sleep 5
 
 # 检查pm2中进程的运行状态
-PM2_STATUS=$(pm2 show socks_proxy | grep status | awk '{print $4}')
+PM2_STATUS=$(pm2 show socks5_proxy | grep status | awk '{print $4}')
 if [ "$PM2_STATUS" == "online" ]; then
   echo "代理服务已启动。正在检查代理运行状态..."
   CURL_OUTPUT=$(curl -s ip.sb --socks5 $SOCKS5_USER:$SOCKS5_PASS@localhost:$SOCKS5_PORT)
@@ -144,8 +144,8 @@ if [ "$PM2_STATUS" == "online" ]; then
     echo "代理工作正常，脚本结束。"
   else
     echo "代理创建失败，请检查自己输入的内容。"
-    pm2 stop socks_proxy
-    pm2 delete socks_proxy
+    pm2 stop socks5_proxy
+    pm2 delete socks5_proxy
     exit 1
   fi
 else
