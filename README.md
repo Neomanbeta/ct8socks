@@ -7,7 +7,7 @@ ct8创建socks5的一键脚本
 
 用法：
 
-1：直接wget https://github.com/Neomanbeta/ct8socks/raw/main/ct8socks.sh && chmod +x ct8socks.sh && ./ct8socks.sh   然后你就可以跳过2和3，直接看4了。
+1：直接  wget https://github.com/Neomanbeta/ct8socks/raw/main/ct8socks.sh && chmod +x ct8socks.sh && ./ct8socks.sh   然后你就可以跳过2和3，直接看4了。
 
 或者ssh登录你的ct8服务器，输入nano ct8socks.sh，然后把ct8socks.sh里面所有的内容黏贴进去，保存退出。或者用winscp等任何支持sshftp的软件直接把ct8socks.sh传上去。
 
